@@ -18,7 +18,9 @@ export default function Home() {
             </div>
             <div className={styles["main-nav-container-right-my-text"]}>
               MY
-              <span className={styles["main-nav-container-right-my-text-colored"]}>
+              <span
+                className={styles["main-nav-container-right-my-text-colored"]}
+              >
                 SNS
               </span>
             </div>
@@ -27,8 +29,19 @@ export default function Home() {
           <NavMobile />
         </div>
       </div>
-      <div className={styles['main-hero-section']}>
-        hero
+      <div className={styles["main-hero-section"]}>
+        <div className={styles["main-hero-section-video-container"]}>
+          <video autoPlay muted loop id="video">
+            <source
+              src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        <div className={styles["main-hero-section-text"]}>Are You Ready?</div>
+        <div className={styles["main-hero-section-text-sub"]}>
+          Because this is a school like none other...
+        </div>
       </div>
     </main>
   );
