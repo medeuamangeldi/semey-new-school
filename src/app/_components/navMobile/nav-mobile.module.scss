@@ -41,10 +41,15 @@
   border-radius: 30px;
   color: white;
   transition: all 0.4s ease;
+  overflow: hidden;
 }
 
 .menu:hover {
   background-color: #7C1120;
   cursor: pointer;
   transform: scale(1.3);
+}
+
+.menu:hover:after {
+  transform: scale(1);
 }
