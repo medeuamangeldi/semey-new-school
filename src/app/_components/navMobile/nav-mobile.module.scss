@@ -1,0 +1,50 @@
+.main {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin-top: 20px;
+  padding: 1.25rem;
+  padding-top: 0;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem; /* Adjust the '2rem' to match your design system's scale */
+}
+
+.list {
+  width: 100%;
+  padding: 0.08rem;
+  list-style-type: none;
+}
+
+.item:hover {
+  background-color: #7C1120;
+  color: white;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.25rem; /* Adjust based on your design system's scale */
+  background-color: rgb(
+    255,
+    255,
+    255
+  ); /* Replace with the actual color code for 'neutral-950' */
+}
+
+.menu {
+  background-color: black;
+  border-radius: 30px;
+  color: white;
+  transition: all 0.4s ease;
+}
+
+.menu:hover {
+  background-color: #7C1120;
+  cursor: pointer;
+  transform: scale(1.3);
+}
