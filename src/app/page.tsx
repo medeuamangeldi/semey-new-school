@@ -27,6 +27,9 @@ export default function Home() {
           <NavMobile />
         </div>
       </div>
+      <div className={styles['main-hero-section']}>
+        hero
+      </div>
     </main>
   );
 }
