@@ -15,10 +15,13 @@ export default function Home() {
   const isInView = useInView(myRef, { once: false });
 
   const handleOnClick = () => {
-    fetch("http://localhost:8000")
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch((error) => console.error(error));
+    fetch("http://localhost:8000/api/sign", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        base64: "Ubyy3sMHmLFV1wd9gbebKw==",
+      }),
+    });
   };
   return (
     <>
