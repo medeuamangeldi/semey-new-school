@@ -13,6 +13,13 @@ export default function Home() {
   const [transitionProperties, setTransitionProperties]: any = useState();
   const myRef: any = useRef();
   const isInView = useInView(myRef, { once: false });
+
+  const handleOnClick = () => {
+    fetch("http://localhost:8000")
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.error(error));
+  };
   return (
     <>
       <main id="outer-container" className={styles["main"]}>
@@ -66,6 +73,7 @@ export default function Home() {
           <div className={clsx(styles["main-hero-section-text-sub"])}>
             Because this is a school like none other...
           </div>
+          <button onClick={handleOnClick}>request</button>
         </div>
         <hr className={styles["hr"]} />
         <div ref={myRef} className={styles["main-info-section"]}>
