@@ -20,6 +20,7 @@ export default function Home() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         base64: "Ubyy3sMHmLFV1wd9gbebKw==",
+        password: "Dias123456"
       }),
     });
   };
