@@ -25,7 +25,8 @@ export default function Home() {
         base64: bases,
       }),
     }).then((res: any) => {
-      const data = res.json()
+      const data = res.json();
+      console.log(data);
       for (let index = 0; index < data.message.length; index++) {
         const linkSource = `data:application/cms;base64,${data.message[index]}`;
         const downloadLink = document.createElement("a");
@@ -63,7 +64,7 @@ export default function Home() {
           file["base64"] = result;
           setFilenames((prev: any) => {
             const newArr = [...prev, file.name];
-            console.log(newArr)
+            console.log(newArr);
             return newArr;
           });
           setBases((prev: any) => {
