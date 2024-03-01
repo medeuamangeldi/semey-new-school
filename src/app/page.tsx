@@ -25,8 +25,9 @@ export default function Home() {
         base64: bases,
       }),
     }).then((res: any) => {
-      for (let index = 0; index < res.message.length; index++) {
-        const linkSource = `data:application/cms;base64,${res.message[index]}`;
+      const data = res.json()
+      for (let index = 0; index < data.message.length; index++) {
+        const linkSource = `data:application/cms;base64,${data.message[index]}`;
         const downloadLink = document.createElement("a");
         downloadLink.href = linkSource;
         downloadLink.download = `${fileNames[index]}.cms`;
