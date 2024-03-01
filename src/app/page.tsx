@@ -14,20 +14,66 @@ export default function Home() {
   const myRef: any = useRef();
   const isInView = useInView(myRef, { once: false });
 
+  const [bases, setBases]: any = useState([]);
+  const [fileNames, setFilenames]: any = useState([]);
+
   const handleOnClick = () => {
     fetch("http://localhost:8000/api/sign", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        base64: [
-          "Ubyy3sMHmLFV1wd9gbebKw==",
-          "JiAlJfxRm2BXiY7IBaBOcA==",
-          "ciYiyeDQHIEgiVfU6EMx/w==",
-          "wYp6P2D+10DdtgoopK40vg==",
-          "zJs6wfxTrWSWu8VmqpBr+g==",
-        ],
+        base64: bases,
       }),
+    }).then((res: any) => {
+      for (let index = 0; index < res.message.length; index++) {
+        const linkSource = `data:application/cms;base64,${res.message[index]}`;
+        const downloadLink = document.createElement("a");
+        downloadLink.href = linkSource;
+        downloadLink.download = `${fileNames[index]}.cms`;
+        downloadLink.click();
+      }
     });
+  };
+
+  const getBase64 = (file: any) => {
+    return new Promise((resolve) => {
+      let fileInfo;
+      let baseURL = "";
+      // Make new FileReader
+      let reader = new FileReader();
+
+      // Convert the file to base64 text
+      reader.readAsDataURL(file);
+
+      // on reader load somthing...
+      reader.onload = () => {
+        const baseURL = reader.result;
+        resolve(baseURL);
+      };
+    });
+  };
+
+  const handleFileInputChange = (e: any) => {
+    for (let index = 0; index < e.target.files.length; index++) {
+      const file = e.target.files[index];
+
+      getBase64(file)
+        .then((result: any) => {
+          file["base64"] = result;
+          setFilenames((prev: any) => {
+            const newArr = [...prev, file.name];
+            console.log(newArr)
+            return newArr;
+          });
+          setBases((prev: any) => {
+            const newArr = [...prev, result.split(",")[1]];
+            return newArr;
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   };
   return (
     <>
@@ -81,6 +127,14 @@ export default function Home() {
           </div>
           <div className={clsx(styles["main-hero-section-text-sub"])}>
             Because this is a school like none other...
+          </div>
+          <div>
+            <input
+              type="file"
+              name="file"
+              onChange={handleFileInputChange}
+              multiple
+            />
           </div>
           <button onClick={handleOnClick}>request</button>
         </div>
