@@ -25,7 +25,9 @@ export default function Home() {
         base64: bases,
       }),
     })
-      .then((response) => response.json())
+      .then(async (response) => {
+        return await response.json();
+      })
       .then((data) => {
         console.log(data);
         for (let index = 0; index < data.message.length; index++) {
