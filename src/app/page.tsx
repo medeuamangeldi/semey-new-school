@@ -19,8 +19,13 @@ export default function Home() {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        base64: "Ubyy3sMHmLFV1wd9gbebKw==",
-        password: "Dias123456"
+        base64: [
+          "Ubyy3sMHmLFV1wd9gbebKw==",
+          "JiAlJfxRm2BXiY7IBaBOcA==",
+          "ciYiyeDQHIEgiVfU6EMx/w==",
+          "wYp6P2D+10DdtgoopK40vg==",
+          "zJs6wfxTrWSWu8VmqpBr+g==",
+        ],
       }),
     });
   };
