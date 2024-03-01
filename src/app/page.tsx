@@ -17,24 +17,25 @@ export default function Home() {
   const [bases, setBases]: any = useState([]);
   const [fileNames, setFilenames]: any = useState([]);
 
-  const handleOnClick = () => {
-    fetch("http://localhost:8000/api/sign", {
+  const handleOnClick = async () => {
+    await fetch("http://localhost:8000/api/sign", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         base64: bases,
       }),
-    }).then((res: any) => {
-      const data = res.json();
-      console.log(data);
-      for (let index = 0; index < data.message.length; index++) {
-        const linkSource = `data:application/cms;base64,${data.message[index]}`;
-        const downloadLink = document.createElement("a");
-        downloadLink.href = linkSource;
-        downloadLink.download = `${fileNames[index]}.cms`;
-        downloadLink.click();
-      }
-    });
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        for (let index = 0; index < data.message.length; index++) {
+          const linkSource = `data:application/cms;base64,${data.message[index]}`;
+          const downloadLink = document.createElement("a");
+          downloadLink.href = linkSource;
+          downloadLink.download = `${fileNames[index]}.cms`;
+          downloadLink.click();
+        }
+      });
   };
 
   const getBase64 = (file: any) => {
