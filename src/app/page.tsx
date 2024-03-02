@@ -29,7 +29,6 @@ export default function Home() {
         return await response.json();
       })
       .then((data) => {
-        console.log(data);
         for (let index = 0; index < data.message.length; index++) {
           const linkSource = `data:application/cms;base64,${data.message[index]}`;
           const downloadLink = document.createElement("a");
