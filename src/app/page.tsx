@@ -80,7 +80,7 @@ export default function Home() {
     }
   };
   return (
-    <>
+    <div>
       <main id="outer-container" className={styles["main"]}>
         <div className={styles["main-nav-container"]}>
           <div className={styles["main-nav-container-logo"]}>
@@ -148,7 +148,7 @@ export default function Home() {
             style={{
               transform: isInView ? "none" : "translateX(-200px)",
               opacity: isInView ? 1 : 0,
-              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
             }}
             className={styles["main-info-section-title"]}
           >
@@ -157,6 +157,6 @@ export default function Home() {
         </div>
       </main>
       <SmoothScroll />
-    </>
+    </div>
   );
 }
