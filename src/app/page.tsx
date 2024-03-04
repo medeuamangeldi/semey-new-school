@@ -86,6 +86,14 @@ export default function Home() {
           <div className={styles["main-nav-container-logo"]}>
             <Image src="/logo/sns_logo.jpg" width={70} height={70} alt="logo" />
           </div>
+          <div>
+            <input
+              type="file"
+              name="file"
+              onChange={handleFileInputChange}
+              multiple
+            />
+          </div>
           <button onClick={handleOnClick}>request</button>
           <div className={styles["main-nav-container-right"]}>
             <div className={styles["main-nav-container-right-my"]}>
@@ -133,14 +141,7 @@ export default function Home() {
           <div className={clsx(styles["main-hero-section-text-sub"])}>
             Because this is a school like none other...
           </div>
-          <div>
-            <input
-              type="file"
-              name="file"
-              onChange={handleFileInputChange}
-              multiple
-            />
-          </div>
+          
           
         </div>
         <hr className={styles["hr"]} />
