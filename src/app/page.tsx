@@ -86,6 +86,7 @@ export default function Home() {
           <div className={styles["main-nav-container-logo"]}>
             <Image src="/logo/sns_logo.jpg" width={70} height={70} alt="logo" />
           </div>
+          <button onClick={handleOnClick}>request</button>
           <div className={styles["main-nav-container-right"]}>
             <div className={styles["main-nav-container-right-my"]}>
               <div className={styles["main-nav-container-right-my-icon"]}>
@@ -140,7 +141,7 @@ export default function Home() {
               multiple
             />
           </div>
-          <button onClick={handleOnClick}>request</button>
+          
         </div>
         <hr className={styles["hr"]} />
         <div ref={myRef} className={styles["main-info-section"]}>
