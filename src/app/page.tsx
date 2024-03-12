@@ -86,7 +86,7 @@ export default function Home() {
           <div className={styles["main-nav-container-logo"]}>
             <Image src="/logo/sns_logo.jpg" width={70} height={70} alt="logo" />
           </div>
-          <div>
+          {/* <div>
             <input
               type="file"
               name="file"
@@ -94,7 +94,7 @@ export default function Home() {
               multiple
             />
           </div>
-          <button onClick={handleOnClick}>request</button>
+          <button onClick={handleOnClick}>request</button> */}
           <div className={styles["main-nav-container-right"]}>
             <div className={styles["main-nav-container-right-my"]}>
               <div className={styles["main-nav-container-right-my-icon"]}>
