@@ -29,8 +29,9 @@ export default function Home() {
         return await response.json();
       })
       .then((data) => {
+        console.log(data);
         for (let index = 0; index < data.message.length; index++) {
-          const linkSource = `data:application/cms;base64,${data.message[index]}`;
+          const linkSource = `data:application/cms;base64,${data.cms}`;
           const downloadLink = document.createElement("a");
           downloadLink.href = linkSource;
           downloadLink.download = `${fileNames[index]}.cms`;
@@ -86,15 +87,6 @@ export default function Home() {
           <div className={styles["main-nav-container-logo"]}>
             <Image src="/logo/sns_logo.jpg" width={70} height={70} alt="logo" />
           </div>
-          <div>
-            <input
-              type="file"
-              name="file"
-              onChange={handleFileInputChange}
-              multiple
-            />
-          </div>
-          <button onClick={handleOnClick}>request</button>
           <div className={styles["main-nav-container-right"]}>
             <div className={styles["main-nav-container-right-my"]}>
               <div className={styles["main-nav-container-right-my-icon"]}>
@@ -129,10 +121,7 @@ export default function Home() {
         <div className={styles["main-hero-section"]}>
           <div className={styles["main-hero-section-video-container"]}>
             <video autoPlay muted loop id="video">
-              <source
-                src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                type="video/mp4"
-              />
+              <source src="herovideo.mp4" type="video/mp4" />
             </video>
           </div>
           <div className={clsx(styles["main-hero-section-text"])}>
@@ -141,8 +130,6 @@ export default function Home() {
           <div className={clsx(styles["main-hero-section-text-sub"])}>
             Because this is a school like none other...
           </div>
-          
-          
         </div>
         <hr className={styles["hr"]} />
         <div ref={myRef} className={styles["main-info-section"]}>
