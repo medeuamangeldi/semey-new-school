@@ -120,7 +120,17 @@ export default function Home() {
         </div>
         <div className={styles["main-hero-section"]}>
           <div className={styles["main-hero-section-video-container"]}>
-            <video autoPlay muted loop id="video">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              onContextMenu={() => {
+                return false;
+              }}
+              preload="auto"
+              id="video"
+            >
               <source src="herovideo.mp4" type="video/mp4" />
             </video>
           </div>
