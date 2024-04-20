@@ -9,6 +9,7 @@ export default function Home() {
         <Hero />
         <hr className={styles["hr"]} />
         <MainInfo />
+        <hr className={styles["hr"]} />
       </main>
     </div>
   );
