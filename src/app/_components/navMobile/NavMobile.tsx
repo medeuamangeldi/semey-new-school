@@ -3,10 +3,10 @@ import { useRef } from "react";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Squash as Hamburger } from "hamburger-react";
-import { routes } from "@/app/helpers/routes";
+import { routes } from "@/app/_helpers/routes";
 import styles from "./nav-mobile.module.scss";
 
-export const NavMobile = (className: any) => {
+export const NavMobile = () => {
   const [isOpen, setOpen] = useState(false);
   const ref = useRef(null);
 
@@ -14,7 +14,7 @@ export const NavMobile = (className: any) => {
 
   return (
     <div ref={ref}>
-      <div className={styles['menu']}>
+      <div className={styles["menu"]}>
         <Hamburger toggled={isOpen} size={20} toggle={setOpen} />
       </div>
 

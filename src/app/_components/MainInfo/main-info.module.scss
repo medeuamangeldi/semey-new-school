@@ -1,0 +1,30 @@
+.info-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: -200px;
+
+  &-title {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    color: #7c1120;
+    font-size: 75px;
+    font-weight: 900;
+    -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    &-sub {
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      -webkit-text-fill-color: #7c1120; /* Will override color (regardless of order) */
+    }
+  }
+
+  &-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+}

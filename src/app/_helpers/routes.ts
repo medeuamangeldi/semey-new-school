@@ -10,17 +10,17 @@ export const routes = [
     Icon: BiHomeAlt2,
   },
   {
-    title: "Explore",
+    title: "Regulations",
     href: "#",
     Icon: FiSearch,
   },
   {
-    title: "Pricing",
+    title: "School Library",
     href: "#",
     Icon: IoPricetagsOutline,
   },
   {
-    title: "About",
+    title: "About Us",
     href: "#",
     Icon: PiChatCircleBold,
   },
