@@ -8,7 +8,10 @@ import Image from "next/image";
 const NavBar = () => {
   return (
     <div className={styles["nav-container"]}>
-      <div className={styles["nav-container-logo"]}>
+      <div
+        className={styles["nav-container-logo"]}
+        onClick={() => (window.location.href = "/")}
+      >
         <Image src="/logo/sns_logo.jpg" width={70} height={70} alt="logo" />
       </div>
       <div className={styles["nav-container-right"]}>

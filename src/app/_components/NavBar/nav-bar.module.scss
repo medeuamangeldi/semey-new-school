@@ -8,6 +8,7 @@
   left: 0;
   right: 0;
   top: 0;
+  z-index: 100;
 
   &-right {
     display: flex;
@@ -51,6 +52,9 @@
       margin: 0 10px;
       height: 70px;
     }
+  }
+  &-logo {
+    cursor: pointer;
   }
 }
 

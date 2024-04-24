@@ -1,7 +1,8 @@
 import { BiHomeAlt2 } from "react-icons/bi";
 import { IoDocumentsOutline, IoLibraryOutline } from "react-icons/io5";
-import { GrGallery } from "react-icons/gr";
-import { TiInfoLargeOutline } from "react-icons/ti";
+import { GoGoal } from "react-icons/go";
+import { FaPhoneVolume } from "react-icons/fa";
+import { SiFuturelearn } from "react-icons/si";
 
 export const routes = [
   {
@@ -10,23 +11,28 @@ export const routes = [
     Icon: BiHomeAlt2,
   },
   {
-    title: "Gallery",
-    href: "#",
-    Icon: GrGallery,
+    title: "Mission",
+    href: "/mission",
+    Icon: GoGoal,
   },
   {
-    title: "Regulations",
-    href: "#",
+    title: "School Info",
+    href: "/school-info",
     Icon: IoDocumentsOutline,
   },
   {
-    title: "School Library",
-    href: "#",
+    title: "E-Library",
+    href: "/e-library",
     Icon: IoLibraryOutline,
   },
   {
-    title: "About Us",
-    href: "#",
-    Icon: TiInfoLargeOutline,
+    title: "For Graduates",
+    href: "/for-graduates",
+    Icon: SiFuturelearn,
+  },
+  {
+    title: "Contact Us",
+    href: "/contact-us",
+    Icon: FaPhoneVolume,
   },
 ];

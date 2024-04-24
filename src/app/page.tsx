@@ -7,9 +7,9 @@ export default function Home() {
     <div>
       <main id="outer-container" className={styles["main"]}>
         <Hero />
-        <hr className={styles["hr"]} />
+        <hr />
         <MainInfo />
-        <hr className={styles["hr"]} />
+        <hr />
       </main>
     </div>
   );
