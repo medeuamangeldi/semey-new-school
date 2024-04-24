@@ -7,10 +7,10 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const NavBar = () => {
-  const [locale, setLocale] = useState("ru");
+  const [locale, setLocale]: any = useState("");
 
   useEffect(() => {
-    setLocale(localStorage.getItem("locale") || "ru");
+    setLocale(localStorage.getItem("locale"));
   }, []);
   return (
     <div className={styles["nav-container"]}>
@@ -22,38 +22,40 @@ const NavBar = () => {
       </div>
       <div className={styles["nav-container-right"]}>
         <div className={styles["nav-container-right-my"]}>
-          <select name="languages" id="language-select" defaultValue={locale}>
-            <option
-              key={1}
-              value="ru"
-              onClick={(e: any) => {
-                localStorage.setItem("locale", e.target.value);
-                window.location.reload();
-              }}
-            >
-              РУ
-            </option>
-            <option
-              key={2}
-              value="kz"
-              onClick={(e: any) => {
-                localStorage.setItem("locale", e.target.value);
-                window.location.reload();
-              }}
-            >
-              ҚЗ
-            </option>
-            <option
-              key={3}
-              value="en"
-              onClick={(e: any) => {
-                localStorage.setItem("locale", e.target.value);
-                window.location.reload();
-              }}
-            >
-              EN
-            </option>
-          </select>
+          {locale && (
+            <select name="languages" id="language-select" defaultValue={locale}>
+              <option
+                key={1}
+                value="ru"
+                onClick={(e: any) => {
+                  localStorage.setItem("locale", e.target.value);
+                  window.location.reload();
+                }}
+              >
+                РУ
+              </option>
+              <option
+                key={2}
+                value="kz"
+                onClick={(e: any) => {
+                  localStorage.setItem("locale", e.target.value);
+                  window.location.reload();
+                }}
+              >
+                ҚЗ
+              </option>
+              <option
+                key={3}
+                value="en"
+                onClick={(e: any) => {
+                  localStorage.setItem("locale", e.target.value);
+                  window.location.reload();
+                }}
+              >
+                EN
+              </option>
+            </select>
+          )}
           <div className={styles["nav-container-right-my-icon"]}>
             <GoPerson />
           </div>

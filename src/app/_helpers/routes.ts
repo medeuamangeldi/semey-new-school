@@ -6,32 +6,32 @@ import { SiFuturelearn } from "react-icons/si";
 
 export const routes = [
   {
-    title: "Home",
+    title: "homeRoute",
     href: "/",
     Icon: BiHomeAlt2,
   },
   {
-    title: "Mission",
+    title: "missionRoute",
     href: "/mission",
     Icon: GoGoal,
   },
   {
-    title: "School Info",
+    title: "schoolInfoRoute",
     href: "/school-info",
     Icon: IoDocumentsOutline,
   },
   {
-    title: "E-Library",
+    title: "eLibraryRoute",
     href: "/e-library",
     Icon: IoLibraryOutline,
   },
   {
-    title: "For Graduates",
+    title: "forGraduatesRoute",
     href: "/for-graduates",
     Icon: SiFuturelearn,
   },
   {
-    title: "Contact Us",
+    title: "contactUsRoute",
     href: "/contact-us",
     Icon: FaPhoneVolume,
   },

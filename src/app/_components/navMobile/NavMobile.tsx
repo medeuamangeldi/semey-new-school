@@ -1,17 +1,21 @@
 import { useClickAway } from "react-use";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Squash as Hamburger } from "hamburger-react";
 import { routes } from "@/app/_helpers/routes";
 import styles from "./nav-mobile.module.scss";
+import { t } from "@/app/_helpers/translate";
 
 export const NavMobile = () => {
   const [isOpen, setOpen] = useState(false);
   const ref = useRef(null);
+  const [locale, setLocale]: any = useState("");
 
   useClickAway(ref, () => setOpen(false));
-
+  useEffect(() => {
+    setLocale(localStorage.getItem("locale"));
+  }, []);
   return (
     <div ref={ref}>
       <div className={styles["menu"]}>
@@ -49,7 +53,9 @@ export const NavMobile = () => {
                       className={styles["item"]}
                       href={route.href}
                     >
-                      <span className="flex gap-1 text-lg">{route.title}</span>
+                      <span className="flex gap-1 text-lg">
+                        {t(route.title, locale)}
+                      </span>
                       <Icon className="text-xl" />
                     </a>
                   </motion.li>

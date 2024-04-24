@@ -1,3 +1,9 @@
 export const commonEn: any = {
-  "hero-title": "Welcome to Semey New School",
+  heroTitle: "Welcome to Semey New School",
+  homeRoute: "Home",
+  missionRoute: "Mission",
+  schoolInfoRoute: "School Info",
+  eLibraryRoute: "E-Library",
+  forGraduatesRoute: "For Graduates",
+  contactUsRoute: "Contact Us",
 };

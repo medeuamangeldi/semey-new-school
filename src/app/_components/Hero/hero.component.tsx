@@ -3,9 +3,9 @@ import styles from "./hero.module.scss";
 import { t } from "@/app/_helpers/translate";
 import { useEffect, useState } from "react";
 const Hero = () => {
-  const [locale, setLocale] = useState("ru");
+  const [locale, setLocale]: any = useState("");
   useEffect(() => {
-    setLocale(localStorage.getItem("locale") || "ru");
+    setLocale(localStorage.getItem("locale"));
   }, []);
   return (
     <div className={styles["hero-section"]}>
@@ -25,7 +25,7 @@ const Hero = () => {
         </video>
       </div>
       <div className={clsx(styles["hero-section-text"])}>
-        {t("hero-title", locale)}
+        {t("heroTitle", locale)}
       </div>
     </div>
   );
