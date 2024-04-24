@@ -5,7 +5,7 @@
   align-items: center;
   gap: 30px;
   width: 100%;
-  padding: 50px 0;
+  padding: 50px 10px;
   &-title {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     color: #7c1120;
@@ -16,6 +16,38 @@
     &-sub {
       font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
       -webkit-text-fill-color: #7c1120; /* Will override color (regardless of order) */
+    }
+  }
+  &-body {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 10px;
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      &-title {
+        font-size: 25px;
+        text-align: center;
+        font-weight: 600;
+      }
+      &-text {
+        font-size: 20px;
+        text-align: center;
+        &-list {
+          text-align: left;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          &-item {
+            text-decoration: underline;
+            font-weight: 600;
+          }
+        }
+      }
     }
   }
 }
