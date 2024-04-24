@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
   width: 100%;
 
   &-title {
@@ -24,7 +24,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 60px;
+    &-card-reverse {
+      flex-direction: row-reverse !important;
+      &-image {
+        box-shadow: 50px -40px 0 -40px #ffffff, -50px -50px 0px -43px #7c1120 !important;
+      }
+    }
     &-card {
       display: flex;
       flex-direction: row;
@@ -77,7 +83,10 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 20px;
+      gap: 30px;
+      &-card-reverse {
+        flex-direction: column-reverse !important;
+      }
       &-card {
         display: flex;
         flex-direction: column-reverse;
