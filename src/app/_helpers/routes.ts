@@ -6,7 +6,7 @@ import { TiInfoLargeOutline } from "react-icons/ti";
 export const routes = [
   {
     title: "Home",
-    href: "#",
+    href: "/",
     Icon: BiHomeAlt2,
   },
   {

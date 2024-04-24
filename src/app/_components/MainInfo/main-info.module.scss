@@ -3,13 +3,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 20px;
   width: 100%;
-  margin-bottom: -200px;
 
   &-title {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     color: #7c1120;
-    font-size: 75px;
+    font-size: 95px;
     font-weight: 900;
     -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
     -webkit-text-stroke-width: 1px;
@@ -25,6 +25,73 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
-    margin-top: 20px;
+    &-card {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      &-text {
+        max-width: 380px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        &-title {
+          font-size: 50px;
+          font-weight: 600;
+          &-special {
+            -webkit-text-fill-color: #7c1120; /* Will override color (regardless of order) */
+          }
+        }
+        &-body {
+          font-size: 25px;
+          font-weight: 300;
+          line-height: 40px;
+        }
+      }
+      &-image {
+        box-shadow: -50px -40px 0 -40px #ffffff, 50px -50px 0px -43px #7c1120;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 986px) {
+  .info-section-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    &-card {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      &-text {
+        max-width: 620px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        &-title {
+          font-size: 50px;
+          font-weight: 600;
+          &-special {
+            -webkit-text-fill-color: #7c1120; /* Will override color (regardless of order) */
+          }
+        }
+        &-body {
+          font-size: 25px;
+          font-weight: 300;
+          line-height: 40px;
+        }
+      }
+      &-image {
+        box-shadow: -50px -40px 0 -40px #ffffff, 50px -50px 0px -43px #7c1120;
+      }
+    }
   }
 }
