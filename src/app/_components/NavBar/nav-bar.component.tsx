@@ -7,11 +7,11 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const NavBar = () => {
-  const [locale, setLocale]: any = useState("");
+  // const [locale, setLocale]: any = useState("");
 
-  useEffect(() => {
-    setLocale(localStorage.getItem("locale") || "ru");
-  }, []);
+  // useEffect(() => {
+  //   setLocale(localStorage.getItem("locale") || "ru");
+  // }, []);
   return (
     <div className={styles["nav-container"]}>
       <div
@@ -22,7 +22,7 @@ const NavBar = () => {
       </div>
       <div className={styles["nav-container-right"]}>
         <div className={styles["nav-container-right-my"]}>
-          {locale && (
+          {/* {locale && (
             <select name="languages" id="language-select" defaultValue={locale}>
               <option
                 key={1}
@@ -55,7 +55,7 @@ const NavBar = () => {
                 EN
               </option>
             </select>
-          )}
+          )} */}
           <div className={styles["nav-container-right-my-icon"]}>
             <GoPerson />
           </div>

@@ -11,6 +11,6 @@ export const t = (key: string, locale: string) => {
     case "kz":
       return commonKz[key];
     default:
-      return null;
+      return commonRu[key];
   }
 };

@@ -4,9 +4,9 @@ import { t } from "@/app/_helpers/translate";
 import { useEffect, useState } from "react";
 const Hero = () => {
   const [locale, setLocale]: any = useState("");
-  useEffect(() => {
-    setLocale(localStorage.getItem("locale"));
-  }, []);
+  // useEffect(() => {
+  //   setLocale(localStorage.getItem("locale"));
+  // }, []);
   return (
     <div className={styles["hero-section"]}>
       <div className={styles["hero-section-video-container"]}>
