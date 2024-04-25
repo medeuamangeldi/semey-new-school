@@ -29,7 +29,7 @@ const NavBar = () => {
                 value="ru"
                 onClick={(e: any) => {
                   localStorage.setItem("locale", e.target.value);
-                  window.location.reload();
+                  window.location.href = window.location.href;
                 }}
               >
                 РУ
@@ -39,7 +39,7 @@ const NavBar = () => {
                 value="kz"
                 onClick={(e: any) => {
                   localStorage.setItem("locale", e.target.value);
-                  window.location.reload();
+                  window.location.href = window.location.href;
                 }}
               >
                 ҚЗ
@@ -49,7 +49,7 @@ const NavBar = () => {
                 value="en"
                 onClick={(e: any) => {
                   localStorage.setItem("locale", e.target.value);
-                  window.location.reload();
+                  window.location.href = window.location.href;
                 }}
               >
                 EN
