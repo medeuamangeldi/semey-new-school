@@ -10,7 +10,7 @@ const NavBar = () => {
   const [locale, setLocale]: any = useState("");
 
   useEffect(() => {
-    setLocale(localStorage.getItem("locale"));
+    setLocale(localStorage.getItem("locale") || "ru");
   }, []);
   return (
     <div className={styles["nav-container"]}>
