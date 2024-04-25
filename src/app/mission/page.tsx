@@ -1,28 +1,31 @@
+"use client";
+import { useState } from "react";
+import { t } from "../_helpers/translate";
 import styles from "./mission.module.scss";
 const Mission = () => {
+  const [locale, setLocale]: any = useState("");
   return (
     <div className={styles["mission-container"]}>
       <h1 className={styles["mission-container-title"]}>
-        Our{" "}
-        <span className={styles["mission-container-title-sub"]}>Mission</span>
+        {t("ourMissionTitleOne", locale)}{" "}
+        <span className={styles["mission-container-title-sub"]}>
+          {t("ourMissionTitleTwo", locale)}
+        </span>
       </h1>
       <hr />
       <div className={styles["mission-container-body"]}>
         <div className={styles["mission-container-body-item"]}>
           <h2 className={styles["mission-container-body-item-title"]}>
-            Fostering Potential: Empowering Minds for a Changing World
+            {t("ourMissionOneTitle", locale)}
           </h2>
           <p className={styles["mission-container-body-item-text"]}>
-            Our school is committed to fostering a dynamic learning environment
-            where every student is empowered to reach their fullest potential,
-            cultivating critical thinking, creativity, and compassion to thrive
-            in a rapidly changing world.{" "}
+            {t("ourMissionOneText", locale)}
           </p>
         </div>
         <hr />
         <div className={styles["mission-container-body-item"]}>
           <h2 className={styles["mission-container-body-item-title"]}>
-            Our Values
+            {t("ourMissionTwoTitle", locale)}
           </h2>
           <div className={styles["mission-container-body-item-text"]}>
             <ul className={styles["mission-container-body-item-text-list"]}>
@@ -32,10 +35,9 @@ const Mission = () => {
                     styles["mission-container-body-item-text-list-item"]
                   }
                 >
-                  Excellence
+                  {t("ourMissionTwoTextFirst", locale)}
                 </span>
-                : Striving for the highest standards of achievement in
-                academics, character, and personal growth.
+                : {t("ourMissionTwoTextFirstDesc", locale)}
               </li>
               <li>
                 <span
@@ -43,10 +45,9 @@ const Mission = () => {
                     styles["mission-container-body-item-text-list-item"]
                   }
                 >
-                  Inclusivity
+                  {t("ourMissionTwoTextSecond", locale)}
                 </span>
-                : Embracing diversity and creating a welcoming environment where
-                every individual feels valued and respected.
+                : {t("ourMissionTwoTextSecondDesc", locale)}
               </li>
               <li>
                 <span
@@ -54,10 +55,9 @@ const Mission = () => {
                     styles["mission-container-body-item-text-list-item"]
                   }
                 >
-                  Integrity
+                  {t("ourMissionTwoTextThird", locale)}
                 </span>
-                : Upholding honesty, ethics, and moral principles in all actions
-                and decisions.
+                : {t("ourMissionTwoTextThirdDesc", locale)}
               </li>
               <li>
                 <span
@@ -65,10 +65,9 @@ const Mission = () => {
                     styles["mission-container-body-item-text-list-item"]
                   }
                 >
-                  Collaboration
+                  {t("ourMissionTwoTextFourth", locale)}
                 </span>
-                : Encouraging teamwork and cooperation among students, staff,
-                parents, and the wider community to achieve common goals.
+                : {t("ourMissionTwoTextFourthDesc", locale)}
               </li>
               <li>
                 <span
@@ -76,10 +75,9 @@ const Mission = () => {
                     styles["mission-container-body-item-text-list-item"]
                   }
                 >
-                  Innovation
+                  {t("ourMissionTwoTextFifth", locale)}
                 </span>
-                : Embracing creativity, curiosity, and adaptability to foster a
-                culture of continuous improvement and exploration.
+                : {t("ourMissionTwoTextFifthDesc", locale)}
               </li>
               <li>
                 <span
@@ -87,10 +85,9 @@ const Mission = () => {
                     styles["mission-container-body-item-text-list-item"]
                   }
                 >
-                  Resilience
+                  {t("ourMissionTwoTextSixth", locale)}
                 </span>
-                : Cultivating perseverance, grit, and a positive mindset to
-                overcome challenges and bounce back from setbacks.
+                : {t("ourMissionTwoTextSixthDesc", locale)}
               </li>
               <li>
                 <span
@@ -98,11 +95,9 @@ const Mission = () => {
                     styles["mission-container-body-item-text-list-item"]
                   }
                 >
-                  Service
+                  {t("ourMissionTwoTextSeventh", locale)}
                 </span>
-                : Promoting a spirit of giving back and making a positive impact
-                on the local and global community through acts of kindness and
-                service.
+                : {t("ourMissionTwoTextSeventhDesc", locale)}
               </li>
               <li>
                 <span
@@ -110,11 +105,9 @@ const Mission = () => {
                     styles["mission-container-body-item-text-list-item"]
                   }
                 >
-                  Empowerment
+                  {t("ourMissionTwoTextEighth", locale)}
                 </span>
-                : Providing opportunities for students to take ownership of
-                their learning, make informed choices, and become leaders in
-                their own right.
+                : {t("ourMissionTwoTextEighthDesc", locale)}
               </li>
             </ul>
           </div>
@@ -122,13 +115,10 @@ const Mission = () => {
         <hr />
         <div className={styles["mission-container-body-item"]}>
           <h2 className={styles["mission-container-body-item-title"]}>
-            Strategic Goals
+            {t("ourMissionThreeTitle", locale)}
           </h2>
           <p className={styles["mission-container-body-item-text"]}>
-            To implement personalized learning initiatives that cater to diverse
-            student needs, leveraging technology and innovative teaching
-            methodologies to enhance student engagement, academic achievement,
-            and overall well-being.
+            {t("ourMissionThreeText", locale)}
           </p>
         </div>
       </div>
