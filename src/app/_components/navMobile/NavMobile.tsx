@@ -13,9 +13,9 @@ export const NavMobile = () => {
   const [locale, setLocale]: any = useState("");
 
   useClickAway(ref, () => setOpen(false));
-  useEffect(() => {
-    setLocale(localStorage.getItem("locale"));
-  }, []);
+  // useEffect(() => {
+  //   setLocale(localStorage.getItem("locale"));
+  // }, []);
   return (
     <div ref={ref}>
       <div className={styles["menu"]}>

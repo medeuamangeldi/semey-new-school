@@ -1,12 +1,16 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useRef } from "react";
+"use client";
+import { useRef, useState } from "react";
 import styles from "./main-info.module.scss";
 import { useInView } from "framer-motion";
 import Image from "next/image";
 import clsx from "clsx";
+import { t } from "@/app/_helpers/translate";
+import { TbArrowBigDownLinesFilled } from "react-icons/tb";
 const MainInfo = () => {
   const myRef: any = useRef();
   const isInView = useInView(myRef, { once: false });
+  const [locale, setLocale]: any = useState("");
   return (
     <div className={styles["info-section"]}>
       <span
@@ -18,24 +22,25 @@ const MainInfo = () => {
         }}
         className={styles["info-section-title"]}
       >
-        <span className={styles["info-section-title-sub"]}>BE</span> INSPIRED
+        <span className={styles["info-section-title-sub"]}>
+          {t("movingTextOne", locale)}
+        </span>{" "}
+        {t("movingTextTwo", locale)}
       </span>
 
       <div className={styles["info-section-cards"]}>
         <div className={clsx(styles["info-section-cards-card"])}>
           <div className={styles["info-section-cards-card-text"]}>
             <span className={styles["info-section-cards-card-text-title"]}>
-              Elevate your{" "}
+              {t("cardOneTitleOne", locale)}{" "}
               <span
                 className={styles["info-section-cards-card-text-title-special"]}
               >
-                Academic Potential
+                {t("cardOneTitleTwo", locale)}
               </span>
             </span>
             <div className={styles["info-section-cards-card-text-body"]}>
-              Talented teachers, high academic standards, and the development of
-              leadership skills in a coed environment are the hallmarks of a
-              Baylor School education.
+              {t("cardOneText", locale)}
             </div>
           </div>
           <Image
@@ -46,6 +51,9 @@ const MainInfo = () => {
             className={styles["info-section-cards-card-image"]}
           />
         </div>
+        <div style={{ color: "#7c1120" }}>
+          <TbArrowBigDownLinesFilled />
+        </div>
         <div
           className={clsx(
             styles["info-section-cards-card"],
@@ -54,19 +62,15 @@ const MainInfo = () => {
         >
           <div className={styles["info-section-cards-card-text"]}>
             <span className={styles["info-section-cards-card-text-title"]}>
-              Leading{" "}
+              {t("cardTwoTitleOne", locale)}{" "}
               <span
                 className={styles["info-section-cards-card-text-title-special"]}
               >
-                Faculty
+                {t("cardTwoTitleTwo", locale)}
               </span>
             </span>
             <div className={styles["info-section-cards-card-text-body"]}>
-              SNS's diverse faculty are leaders in their field - and committed
-              to the school’s mission to make a positive difference in the
-              world. Devoted to their craft they guide students to think beyond
-              the simple answers – preparing them for college and the workplace
-              beyond.
+              {t("cardTwoText", locale)}
             </div>
           </div>
           <Image
@@ -80,21 +84,21 @@ const MainInfo = () => {
             )}
           />
         </div>
+        <div style={{ color: "#7c1120" }}>
+          <TbArrowBigDownLinesFilled />
+        </div>
         <div className={clsx(styles["info-section-cards-card"])}>
           <div className={styles["info-section-cards-card-text"]}>
             <span className={styles["info-section-cards-card-text-title"]}>
-              Leading{" "}
+              {t("cardThreeTitleOne", locale)}{" "}
               <span
                 className={styles["info-section-cards-card-text-title-special"]}
               >
-                Facilities
+                {t("cardThreeTitleTwo", locale)}
               </span>
             </span>
             <div className={styles["info-section-cards-card-text-body"]}>
-              Over the years SNS has invested in a 24/7 learning and living
-              community that includes an expansive new academic building and
-              renovations to dorms, the library, dining hall, and athletic
-              facilities.
+              {t("cardThreeText", locale)}
             </div>
           </div>
           <Image
@@ -105,6 +109,9 @@ const MainInfo = () => {
             className={clsx(styles["info-section-cards-card-image"])}
           />
         </div>
+        <div style={{ color: "#7c1120" }}>
+          <TbArrowBigDownLinesFilled />
+        </div>
         <div
           className={clsx(
             styles["info-section-cards-card"],
@@ -113,18 +120,15 @@ const MainInfo = () => {
         >
           <div className={styles["info-section-cards-card-text"]}>
             <span className={styles["info-section-cards-card-text-title"]}>
-              Leading{" "}
+              {t("cardFourTitleOne", locale)}{" "}
               <span
                 className={styles["info-section-cards-card-text-title-special"]}
               >
-                Opportunities
+                {t("cardFourTitleTwo", locale)}
               </span>
             </span>
             <div className={styles["info-section-cards-card-text-body"]}>
-              SNS leads the way in providing opportunities that allow for the
-              discovery of new interests or a deeper immersion into long-held
-              passions. Faculty, coaches, dorm parents, deans, and advisors work
-              closely with students to guide their experiences.
+              {t("cardFourText", locale)}
             </div>
           </div>
           <Image
