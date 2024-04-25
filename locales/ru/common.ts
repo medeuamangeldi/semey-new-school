@@ -6,8 +6,8 @@ export const commonRu: any = {
   eLibraryRoute: "Электронная библиотека",
   forGraduatesRoute: "Для выпускников",
   contactUsRoute: "Связаться с нами",
-  movingTextOne: "БУДЬ",
-  movingTextTwo: "ВДОХНОВЛЕН",
+  movingTextOne: "НАЙДИ",
+  movingTextTwo: "ВДОХНОВЕНИЕ",
   cardOneTitleOne: "Повысьте свой",
   cardOneTitleTwo: "Академический потенциал",
   cardOneText:

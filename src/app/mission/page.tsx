@@ -1,17 +1,28 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { t } from "../_helpers/translate";
 import styles from "./mission.module.scss";
+import { useInView } from "framer-motion";
 const Mission = () => {
   const [locale, setLocale]: any = useState("");
+  const myRef: any = useRef();
+  const isInView = useInView(myRef, { once: false });
   return (
     <div className={styles["mission-container"]}>
-      <h1 className={styles["mission-container-title"]}>
+      <span
+        ref={myRef}
+        style={{
+          transform: isInView ? "none" : "translateX(-200px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+        }}
+        className={styles["mission-container-title"]}
+      >
         {t("ourMissionTitleOne", locale)}{" "}
         <span className={styles["mission-container-title-sub"]}>
           {t("ourMissionTitleTwo", locale)}
         </span>
-      </h1>
+      </span>
       <hr />
       <div className={styles["mission-container-body"]}>
         <div className={styles["mission-container-body-item"]}>
