@@ -1,7 +1,7 @@
 "use client";
 import styles from "./page.module.scss";
-import Hero from "./_components/Hero/hero.component";
-import MainInfo from "./_components/MainInfo/main-info.component";
+import Hero from "../_components/Hero/hero.component";
+import MainInfo from "../_components/MainInfo/main-info.component";
 export default function Home() {
   return (
     <div>

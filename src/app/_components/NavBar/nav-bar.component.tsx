@@ -5,13 +5,10 @@ import { NavMobile } from "../navMobile/NavMobile";
 import { GoPerson } from "react-icons/go";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useRouter } from "@/navigation";
 
 const NavBar = () => {
-  // const [locale, setLocale]: any = useState("");
-
-  // useEffect(() => {
-  //   setLocale(localStorage.getItem("locale") || "ru");
-  // }, []);
+  const router = useRouter();
   return (
     <div className={styles["nav-container"]}>
       <div
@@ -56,7 +53,12 @@ const NavBar = () => {
               </option>
             </select>
           )} */}
-          <div className={styles["nav-container-right-my-icon"]}>
+          <div
+            onClick={() => {
+              router.push("/auth");
+            }}
+            className={styles["nav-container-right-my-icon"]}
+          >
             <GoPerson />
           </div>
           <div className={styles["nav-container-right-my-subcontainer"]}>

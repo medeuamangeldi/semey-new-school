@@ -5,7 +5,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Squash as Hamburger } from "hamburger-react";
 import { routes } from "@/app/_helpers/routes";
 import styles from "./nav-mobile.module.scss";
-import { t } from "@/app/_helpers/translate";
+import { t } from "../../_helpers/translate";
+import { Link } from "@/navigation";
 
 export const NavMobile = () => {
   const [isOpen, setOpen] = useState(false);
@@ -48,7 +49,7 @@ export const NavMobile = () => {
                     key={route.title}
                     className={styles["list"]}
                   >
-                    <a
+                    <Link
                       onClick={() => setOpen((prev) => !prev)}
                       className={styles["item"]}
                       href={route.href}
@@ -57,7 +58,7 @@ export const NavMobile = () => {
                         {t(route.title, locale)}
                       </span>
                       <Icon className="text-xl" />
-                    </a>
+                    </Link>
                   </motion.li>
                 );
               })}

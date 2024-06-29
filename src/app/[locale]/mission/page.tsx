@@ -1,6 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
-import { t } from "../_helpers/translate";
+import { t } from "../../_helpers/translate";
 import styles from "./mission.module.scss";
 import { useInView } from "framer-motion";
 const Mission = () => {

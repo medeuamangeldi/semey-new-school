@@ -5,7 +5,7 @@ import styles from "./main-info.module.scss";
 import { useInView } from "framer-motion";
 import Image from "next/image";
 import clsx from "clsx";
-import { t } from "@/app/_helpers/translate";
+import { t } from "../../_helpers/translate";
 import { TbArrowBigDownLinesFilled } from "react-icons/tb";
 const MainInfo = () => {
   const myRef: any = useRef();
