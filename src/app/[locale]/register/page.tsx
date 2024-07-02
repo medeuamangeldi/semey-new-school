@@ -1,17 +1,19 @@
 "use client";
 import Input from "@/app/_components/Input/input.component";
-import styles from "./auth.module.scss";
+import styles from "./register.module.scss";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import Button from "@/app/_components/Button/button.component";
 import { useRouter } from "@/navigation";
 
-const AuthPage = () => {
+const RegisterPage = () => {
   const router = useRouter();
-  const loginFormValidator = yup
+  const registerFormValidator = yup
     .object()
     .shape({
+      firstName: yup.string().required("Имя обязательно для заполнения"),
+      lastName: yup.string().required("Фамилия обязательна для заполнения"),
       email: yup
         .string()
         .matches(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Неправильный формат")
@@ -20,6 +22,9 @@ const AuthPage = () => {
         .string()
         .min(8, "Пароль должен содержать минимум 8 символов")
         .required("Пароль обязателен для заполнения"),
+      confirmPassword: yup
+        .string()
+        .oneOf([yup.ref("password")], "Пароли должны совпадать"),
     })
     .required();
   const {
@@ -32,25 +37,48 @@ const AuthPage = () => {
   }: any = useForm<any>({
     mode: "onTouched",
     defaultValues: {
+      firstName: "",
+      lastName: "",
       email: "",
       password: "",
     },
-    resolver: yupResolver(loginFormValidator),
+    resolver: yupResolver(registerFormValidator),
   });
 
   const onSubmit = handleSubmit(async (data: any) => {
     const payload = {
+      firstName: data.firstName,
+      lastName: data.lastName,
       email: data.email,
       password: data.password,
     };
     console.log(payload);
-    router.push("/portal");
   });
   return (
     <div className={styles["container"]}>
       <div className={styles["container-card"]}>
-        <span className={styles["container-card-title"]}>Войти</span>
+        <span className={styles["container-card-title"]}>Регистрация</span>
         <form className={styles["container-card-form"]} onSubmit={onSubmit}>
+          <div>
+            <Input
+              register={register}
+              errors={errors}
+              label="Имя"
+              type="text"
+              name="firstName"
+              placeholder="Введите ваше имя"
+            />
+          </div>
+          <div>
+            <Input
+              register={register}
+              errors={errors}
+              label="Фамилия"
+              type="text"
+              name="lastName"
+              placeholder="Введите вашу фамилию"
+            />
+          </div>
           <div>
             <Input
               register={register}
@@ -72,20 +100,30 @@ const AuthPage = () => {
             />
           </div>
           <div>
+            <Input
+              register={register}
+              errors={errors}
+              label="Подтвердите пароль"
+              type="password"
+              name="confirmPassword"
+              placeholder="Подтвердите ваш пароль"
+            />
+          </div>
+          <div>
             <Button type="submit" disabled={errors.length > 0}>
-              <span>Войти</span>
+              <span>Зарегистрироваться</span>
             </Button>
           </div>
         </form>
         <div className={styles["container-card-no-account"]}>
-          <span>Нет аккаунта?</span>
+          <span>Уже есть аккаунт?</span>
           <div
             onClick={() => {
-              router.push("/register");
+              router.push("/auth");
             }}
             className={styles["container-card-no-account-link"]}
           >
-            Зарегистрироваться
+            Войти
           </div>
         </div>
       </div>
@@ -93,4 +131,4 @@ const AuthPage = () => {
   );
 };
 
-export default AuthPage;
+export default RegisterPage;
