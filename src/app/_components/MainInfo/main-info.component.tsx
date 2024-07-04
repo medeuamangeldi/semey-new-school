@@ -45,8 +45,8 @@ const MainInfo = () => {
           </div>
           <Image
             src="/images/main_info_first.jpeg"
-            width={700}
-            height={600}
+            width={500}
+            height={400}
             alt="main_image_first"
             className={styles["info-section-cards-card-image"]}
           />
@@ -75,8 +75,8 @@ const MainInfo = () => {
           </div>
           <Image
             src="/images/main_info_second.jpeg"
-            width={700}
-            height={600}
+            width={500}
+            height={400}
             alt="main_image_second"
             className={clsx(
               styles["info-section-cards-card-image"],
@@ -103,8 +103,8 @@ const MainInfo = () => {
           </div>
           <Image
             src="/images/main_info_third.jpeg"
-            width={700}
-            height={600}
+            width={500}
+            height={400}
             alt="main_image_third"
             className={clsx(styles["info-section-cards-card-image"])}
           />
@@ -133,8 +133,8 @@ const MainInfo = () => {
           </div>
           <Image
             src="/images/main_info_fourth.jpeg"
-            width={700}
-            height={600}
+            width={500}
+            height={400}
             alt="main_image_fourth"
             className={clsx(
               styles["info-section-cards-card-image"],

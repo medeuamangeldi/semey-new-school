@@ -3,12 +3,13 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 26px;
+  padding: 20px;
   width: 100%;
   left: 0;
   right: 0;
   top: 0;
   z-index: 100;
+  border-bottom: 1px solid #cccbcb;
 
   &-right {
     display: flex;

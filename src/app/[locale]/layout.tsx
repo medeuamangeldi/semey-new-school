@@ -6,6 +6,8 @@ import Footer from "../_components/Footer/footer.component";
 import ReduxProvider from "../_store/redux-provider";
 import { NextIntlClientProvider, useMessages } from "next-intl";
 import { Suspense } from "react";
+import Sidebar from "../_components/Sidebar/sidebar.component";
+import { usePathname } from "@/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,8 +27,12 @@ export default function RootLayout({ children, params: { locale } }: any) {
       <ReduxProvider>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <body className={inter.className}>
-            <NavBar />
-            <Suspense>{children}</Suspense>
+            <NavBar>
+              <Suspense>{children}</Suspense>
+            </NavBar>
+            <Sidebar>
+              <Suspense>{children}</Suspense>
+            </Sidebar>
             <Footer />
           </body>
         </NextIntlClientProvider>

@@ -4,22 +4,28 @@ import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { NavMobile } from "../navMobile/NavMobile";
 import { GoPerson } from "react-icons/go";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { useRouter } from "@/navigation";
+import { usePathname, useRouter } from "@/navigation";
 
-const NavBar = () => {
+const NavBar = ({ children }: any) => {
   const router = useRouter();
+  const pathname = usePathname();
   return (
-    <div className={styles["nav-container"]}>
-      <div
-        className={styles["nav-container-logo"]}
-        onClick={() => (window.location.href = "/")}
-      >
-        <Image src="/logo/sns_logo.jpg" width={70} height={70} alt="logo" />
-      </div>
-      <div className={styles["nav-container-right"]}>
-        <div className={styles["nav-container-right-my"]}>
-          {/* {locale && (
+    <div
+      style={{
+        display: pathname === "/portal" ? "none" : "flex",
+        flexDirection: "column",
+      }}
+    >
+      <div className={styles["nav-container"]}>
+        <div
+          className={styles["nav-container-logo"]}
+          onClick={() => (window.location.href = "/")}
+        >
+          <Image src="/logo/sns_logo.jpg" width={70} height={70} alt="logo" />
+        </div>
+        <div className={styles["nav-container-right"]}>
+          <div className={styles["nav-container-right-my"]}>
+            {/* {locale && (
             <select name="languages" id="language-select" defaultValue={locale}>
               <option
                 key={1}
@@ -53,31 +59,33 @@ const NavBar = () => {
               </option>
             </select>
           )} */}
-          <div
-            onClick={() => {
-              router.push("/auth");
-            }}
-            className={styles["nav-container-right-my-icon"]}
-          >
-            <GoPerson />
-          </div>
-          <div className={styles["nav-container-right-my-subcontainer"]}>
-            <div className={styles["nav-container-right-my-text"]}>
-              MY
-              <span className={styles["nav-container-right-my-text-colored"]}>
-                SNS
-              </span>
-            </div>
             <div
-              className={styles["nav-container-right-my-subcontainer-arrow"]}
+              onClick={() => {
+                router.push("/auth");
+              }}
+              className={styles["nav-container-right-my-icon"]}
             >
-              <IoIosArrowDroprightCircle />
+              <GoPerson />
+            </div>
+            <div className={styles["nav-container-right-my-subcontainer"]}>
+              <div className={styles["nav-container-right-my-text"]}>
+                MY
+                <span className={styles["nav-container-right-my-text-colored"]}>
+                  SNS
+                </span>
+              </div>
+              <div
+                className={styles["nav-container-right-my-subcontainer-arrow"]}
+              >
+                <IoIosArrowDroprightCircle />
+              </div>
             </div>
           </div>
+          <div className={styles["nav-container-right-divider"]}></div>
+          <NavMobile />
         </div>
-        <div className={styles["nav-container-right-divider"]}></div>
-        <NavMobile />
       </div>
+      {children}
     </div>
   );
 };
