@@ -44,7 +44,7 @@ const AuthPage = () => {
       password: data.password,
     };
     console.log(payload);
-    router.push("/portal");
+    router.push("/portal/schedule");
   });
   return (
     <div className={styles["container"]}>

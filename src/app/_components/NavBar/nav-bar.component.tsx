@@ -5,14 +5,18 @@ import { NavMobile } from "../navMobile/NavMobile";
 import { GoPerson } from "react-icons/go";
 import Image from "next/image";
 import { usePathname, useRouter } from "@/navigation";
+import { useEffect } from "react";
 
 const NavBar = ({ children }: any) => {
   const router = useRouter();
   const pathname = usePathname();
+  const isNeededToDisplay = () => {
+    return !pathname.includes("portal");
+  };
   return (
     <div
       style={{
-        display: pathname === "/portal" ? "none" : "flex",
+        display: isNeededToDisplay() ? "flex" : "none",
         flexDirection: "column",
       }}
     >

@@ -7,7 +7,7 @@ import { SiFuturelearn } from "react-icons/si";
 export const routes = [
   {
     title: "homeRoute",
-    href: "/",
+    href: "../",
     Icon: BiHomeAlt2,
   },
   {
