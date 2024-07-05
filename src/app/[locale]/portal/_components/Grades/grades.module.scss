@@ -1,0 +1,32 @@
+.grades-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px 20px 20px 0;
+  height: auto;
+  overflow-y: auto;
+  align-items: center;
+  justify-content: flex-start;
+  &-header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    height: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    &-title {
+      font-size: 26px;
+      font-weight: 600;
+      color: #7c1120;
+    }
+  }
+  &-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+    height: 100%;
+  }
+}

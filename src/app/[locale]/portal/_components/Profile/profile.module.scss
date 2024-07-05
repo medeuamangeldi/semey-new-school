@@ -1,0 +1,96 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px 20px 20px 0;
+  height: auto;
+  overflow-y: auto;
+  align-items: center;
+  justify-content: flex-start;
+  &-header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    height: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    &-title {
+      font-size: 26px;
+      font-weight: 600;
+      color: #7c1120;
+    }
+  }
+  &-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #dfdede;
+    border-radius: 5px;
+    padding: 20px;
+    &-name {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      &-full {
+        font-size: 24px;
+        font-weight: 600;
+        color: #7c1120;
+      }
+      &-buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        &-edit {
+          color: #7c1120;
+          background-color: #ece9e9;
+          font-size: 18px;
+          padding: 10px;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: row;
+          gap: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+    &-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      width: 100%;
+      background-color: #f7f6f6;
+      padding: 20px;
+      border-radius: 5px;
+      &-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        width: 100%;
+        &-title {
+          font-size: 24px;
+          font-weight: 600;
+          color: #7c1120;
+        }
+        &-value {
+          font-size: 16px;
+          font-weight: 400;
+          color: #7c1120;
+        }
+      }
+    }
+  }
+}

@@ -39,21 +39,21 @@ const Sidebar = ({ children }: any) => {
   const linkItems = [
     {
       id: 1,
-      name: "Мое расписание",
+      name: "Расписание",
       icon: <GrScheduleNew size={25} />,
       to: "/portal/schedule",
       code: "schedule",
     },
     {
       id: 2,
-      name: "Мои оценки",
+      name: "Оценки",
       icon: <GrScorecard size={25} />,
       to: "/portal/grades",
       code: "grades",
     },
     {
       id: 3,
-      name: "Мой профиль",
+      name: "Профиль",
       icon: <ImProfile size={25} />,
       to: "/portal/profile",
       code: "profile",

@@ -1,0 +1,79 @@
+.school-info-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+  height: auto;
+  overflow-y: auto;
+  align-items: center;
+  justify-content: flex-start;
+  &-header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    &-title {
+      font-size: 26px;
+      font-weight: 600;
+      color: #7c1120;
+    }
+  }
+  &-table {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+    height: 100%;
+    &-row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+      padding: 20px;
+      border: 1px solid #dfdede;
+      &-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #7c1120;
+        width: 240px;
+      }
+      &-value {
+        font-size: 16px;
+        font-weight: 400;
+        color: #470d15;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .school-info-container-table-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #dfdede;
+    &-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #7c1120;
+      max-width: 200px;
+    }
+    &-value {
+      font-size: 12px;
+      font-weight: 400;
+      color: #470d15;
+      width: 100%;
+    }
+  }
+}

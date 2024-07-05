@@ -6,9 +6,12 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import Button from "@/app/_components/Button/button.component";
 import { useRouter } from "@/navigation";
+import { useAppDispatch } from "@/app/_store/hooks";
+import { setIsLoading } from "@/app/_store/loader-slice";
 
 const AuthPage = () => {
   const router = useRouter();
+  const dispatch = useAppDispatch();
   const loginFormValidator = yup
     .object()
     .shape({
@@ -39,11 +42,14 @@ const AuthPage = () => {
   });
 
   const onSubmit = handleSubmit(async (data: any) => {
+    dispatch(setIsLoading(true));
     const payload = {
       email: data.email,
       password: data.password,
     };
-    console.log(payload);
+    setTimeout(() => {
+      dispatch(setIsLoading(false));
+    }, 700);
     router.push("/portal/schedule");
   });
   return (
