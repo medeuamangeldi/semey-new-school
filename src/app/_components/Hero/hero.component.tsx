@@ -11,6 +11,8 @@ const Hero = () => {
     <div className={styles["hero-section"]}>
       <div className={styles["hero-section-video-container"]}>
         <video
+          // autoPlay
+          // loop
           muted
           controls
           playsInline
