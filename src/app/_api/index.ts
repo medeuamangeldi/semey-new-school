@@ -28,15 +28,7 @@ api.interceptors.request.use(onRequest);
 api.interceptors.response.use(
   (response: any) => response,
   (error: any) => {
-    // console.log(error.response?.data);
-    if (
-      (error.response.status !== 404 && error.response.status !== 422) ||
-      !error.response.status ||
-      (error?.response?.data?.error === "Not Found" &&
-        !error.response?.data?.message.includes("No user found")) ||
-      (error.response?.data?.status === 409 &&
-        !error.response?.data?.message.includes("already exists"))
-    ) {
+    if (error.response.status === 401) {
       localStorage.clear();
       window.location.href = "/ru/auth?state=login";
     }

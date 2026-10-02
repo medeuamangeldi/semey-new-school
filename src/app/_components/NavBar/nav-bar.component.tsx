@@ -63,7 +63,7 @@ const NavBar = ({ children }: any) => {
               </option>
             </select>
           )} */}
-            <div
+            {/* <div
               onClick={() => {
                 router.push("/auth");
               }}
@@ -83,10 +83,10 @@ const NavBar = ({ children }: any) => {
               >
                 <IoIosArrowDroprightCircle />
               </div>
-            </div>
+            </div> */}
           </div>
-          <div className={styles["nav-container-right-divider"]}></div>
-          <NavMobile />
+          {/* <div className={styles["nav-container-right-divider"]}></div> */}
+          {/* <NavMobile /> */}
         </div>
       </div>
       {children}

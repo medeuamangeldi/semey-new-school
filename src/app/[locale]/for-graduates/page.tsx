@@ -1,9 +1,2 @@
-const ForGraduates = () => {
-  return (
-    <div>
-      <h1>For Graduates</h1>
-    </div>
-  );
-};
-
-export default ForGraduates;
+import { GraduatesPage } from "../../_components/SchoolSite/pages";
+export default GraduatesPage;
